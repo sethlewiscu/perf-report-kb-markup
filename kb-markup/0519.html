@@ -1,0 +1,422 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Investigating + Creating Performance Reports</title>
+  </head>
+  <body>
+    <div class="section">
+      <h1>
+        <strong>Who?</strong>
+      </h1>
+      <p>Technical Support</p>
+    </div>
+    <div class="section">
+      <h1>
+        <strong>What?</strong>
+      </h1>
+      <p>
+        This SOP outlines gathering data about, troubleshooting, and
+        creating performance reports.
+      </p>
+    </div>
+    <div class="section">
+      <h1>Scope</h1>
+      <h2 id="is-perf">Examples of <strong>performance issues</strong></h2>
+      <ul>
+        <li>Slow loading times</li>
+        <li>Operations that lead to <strong>app freezing</strong></li>
+        <li>
+          Slow initial loads (new tabs, opening the desktop app, refreshing the
+          page, logging in, etc.)
+        </li>
+        <li>
+          Slow page (route) changes (i.e., moving within the platform once
+          loaded)
+        </li>
+      </ul>
+      <h2 id="is-not-perf">What is NOT 🙅🏾‍♂️ a performance issue?</h2>
+      <p>
+        Sometimes clients refer to these items as "performance" issues. Issues
+        with the following features are bugs and should follow the standard bug
+        reporting/escalating processes.
+      </p>
+      <ul>
+        <li>
+          If you think the customer is demonstrating acceptable loading times,
+          <em>reach out to</em>
+          <a href="javascript: void;">@performance-smes</a>
+          or the
+          <a href="javascript: void;">@performance-tim</a>
+        </li>
+        <li>Long wait time for Automations to <em>fire</em></li>
+        <li>
+          Long wait times for actions to occur from third-party integrations
+          (Zapier, Make,
+          <a href="http://tray.io/">Tray.io</a>, etc.)
+        </li>
+        <li>
+          <p>Data sync/refresh issues such as</p>
+          <ul>
+            <li>Status not updating in another user's browser</li>
+            <li>Needing to refresh to see changes</li>
+          </ul>
+        </li>
+      </ul>
+      <p>
+        <em>(Feel free to raise to</em>
+        <a href="javascript: void;">@performance-tim</a>
+        <em>if user very frustrated/highly impacted)</em>
+      </p>
+    </div>
+    <div class="section">
+      <h1>
+        <strong>When?</strong>
+      </h1>
+      <ol>
+        <li>
+          Whenever a user writes in with complaints of slow loading or poor
+          speeds
+        </li>
+        <li>After being pinged in a Social escalation</li>
+        <li>
+          Whenever a sales or red account escalation requests help with a
+          client experiencing a performance issue
+        </li>
+      </ol>
+      <h2>Reminders</h2>
+      <ol>
+        <li>
+          After confirming a performance issue, refrain from attaching a report
+          to a defect in the standard way via the
+          <a href="https://app.clickup-stg.com/333/v/li/650700028">
+            Defects Master List
+          </a>.
+        </li>
+        <li>
+          If your user reports performance issues for a specific browser,
+          desktop app, or mobile, you should still follow the process below and
+          create a performance report inside the
+          <a href="https://app.clickup-stg.com/333/v/li/980200129712">
+            Performance Report List
+          </a>.
+        </li>
+      </ol>
+    </div>
+    <div class="section">
+      <h1>
+        <strong>How?</strong>
+      </h1>
+      <h2>🏅 Golden Rule</h2>
+      <p>
+        <strong>
+          Screen recordings of the perceived performance issue(s) are most
+          important.
+        </strong>
+      </p>
+      <p>
+        If you have answers to the questions presented in the
+        <strong>Speeds::Performance questions</strong> macro, it's time to
+        create a report.
+      </p>
+      <p>Here are some do's and don'ts when preparing a performance report.</p>
+      <h3>Do</h3>
+      <ul>
+        <li>
+          Ensure the issue(s) reported
+          <strong><em>is not a functional issue/bug.</em></strong>
+          (See <strong>"What is NOT a performance issue?"</strong> above.)
+        </li>
+        <li>
+          If you see the user encountering egregiously slow loading,
+          <strong>do sympathize with them</strong>. If they're frustrated AND
+          if you see clear signs of latency, you can acknowledge what they're
+          experiencing is not up to our standard.
+        </li>
+      </ul>
+      <h3>Don't</h3>
+      <ul>
+        <li>
+          Indicate that their poor performance is our fault. Many performance
+          issues are a result of poor hardware, internet connections, IT
+          systems, etc. <strong>Do not</strong> admit/indicate for certain that
+          the problem is with ClickUp.
+        </li>
+        <li>
+          Ask or suggest broad t-shooting steps e.g. check network connection,
+          clear cache, try incognito etc.
+        </li>
+        <li>
+          Attempt to repro in user's Workspace. You won't be on the same
+          network, machine, shard, etc. with them so a 1-1 repro is not
+          possible.
+        </li>
+      </ul>
+      <h2>1) Gather Data</h2>
+      <ol>
+        <li>
+          Select the <code>Performance Issue</code> checkbox in Zendesk and
+          save the ticket:
+          <img
+            src="https://t333.s.clickup-attachments-stg.com/t333/534ba814-27de-4e16-90c7-4cfec0cf49ed/image.png"
+          />
+        </li>
+        <li>
+          <p>
+            If you don't have the details of the performance issues, send the
+            <strong>Troubleshooting::Slow Speeds::Performance questions</strong>
+            macro, requesting critical data for the investigation.
+          </p>
+          <ul>
+            <li>
+              <strong>
+                ⛳️ NOTE FOR TS: If you're already assigned the ticket and you
+                use the macro, Zendesk may un-assign you from the ticket.
+                <u>Be on the lookout</u> and <u>reassign yourself</u>!
+              </strong>
+            </li>
+          </ul>
+        </li>
+        <li>
+          Determine whether the user is truly experiencing performance issues.
+        </li>
+      </ol>
+      <h2>2) Create a Performance Report</h2>
+      <p>
+        After confirming the user is experiencing one or more performance
+        issues, gather the basic details and follow the steps below.
+      </p>
+      <h3>2a) Confirm whether a report already exists</h3>
+      <p>
+        Before spinning up a new Performance Report for a customer, confirm
+        whether a report already exists.
+      </p>
+      <ol>
+        <li>
+          Open
+          <a href="https://app.clickup-stg.com/333/v/l/ad-2564953">
+            this view
+          </a>
+        </li>
+        <li>
+          <p>
+            Search for the name of the <strong>Workspace</strong> or the
+            <strong>user</strong> writing in
+          </p>
+          <ol>
+            <li>
+              <p>
+                If you see an
+                <strong>existing and <u>open</u> report</strong>
+                for that Workspace
+              </p>
+              <ol>
+                <li>
+                  Create a <strong>new report</strong> through the
+                  <a href="https://app.clickup-stg.com/333/v/fm/ad-1707069">
+                    <strong>intake Form</strong>
+                  </a>
+                  using the <strong>customer's name</strong> as the title
+                </li>
+                <li>
+                  Open the <strong>new report</strong> and convert it to a
+                  subtask inside the <strong>existing report</strong>
+                </li>
+              </ol>
+            </li>
+            <li>
+              If you see an existing and
+              <strong><u>closed</u> report</strong>
+              for that Workspace: Create a <strong>new report</strong> through
+              the
+              <a href="https://app.clickup-stg.com/333/v/fm/ad-1707069">
+                <strong>intake Form</strong>
+              </a>
+              using the <strong>Workspace name</strong> and simply note the old
+              report.
+            </li>
+          </ol>
+        </li>
+      </ol>
+      <h3>2b) Steps to create the report</h3>
+      <ol>
+        <li>
+          Open the CRM sidebar and select the vertical ellipsis to the left of
+          the user's name.
+          <img
+            src="https://t333.s.clickup-attachments-stg.com/t333/c7a6d06f-067d-401b-bb2e-0f61e5931072/image.png"
+          />
+        </li>
+        <li>
+          Select <strong>Performance Report Intake</strong> — a Form will open
+          in a new browser tab.
+          <img
+            src="https://t333.s.clickup-attachments-stg.com/t333/a9f6931d-e769-46bc-900d-305837164854/image.png"
+          />
+        </li>
+        <li>
+          <p>Complete the required fields in the form.</p>
+          <ul>
+            <li>
+              <p>
+                <em>Use</em>
+                <a
+                  href="https://app.datadoghq.com/logs?query=@userid:54098740&agg_m=count&agg_m_source=base&agg_q=@network.client.geoip.country.name,@network.client.geoip.city.name&agg_q_source=base,base&agg_t=count&clustering_pattern_field_path=@network.client.geoip.subdivision.name&cols=host,service,@traceId,@network.client.geoip.country.name&messageDisplay=inline&sort_m=,&sort_m_source=,&sort_t=,&storage=hot&stream_sort=desc&top_n=10,10&top_o=top,top&viz=pattern&x_missing=true,true&from_ts=1750688033039&to_ts=1751984033039&live=true"
+                >
+                  <strong><em>this Datadog query</em></strong>
+                </a>
+                <em>
+                  to pinpoint the city where most internet traffic originates.
+                  Replace the placeholder
+                </em>
+                <code>@userid</code>
+                <em> value with your user's.</em>
+              </p>
+              <ul>
+                <li>
+                  Use the city/state/province details with
+                  <strong>the most traffic</strong>, e.g.:
+                  <img
+                    src="https://t333.s.clickup-attachments-stg.com/t333/575e0129-4735-44cf-ac6f-d9e658694ae1/CleanShot%202025-07-09%20at%2009.12.19.png"
+                  />
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          Link the newly created Report with the existing Zendesk Ticket via
+          the <em>'Link Existing'</em> option in the CRM sidebar.
+          <img
+            src="https://t333.s.clickup-attachments-stg.com/t333/1e6d8be4-7b6c-45e8-97bb-df86b906eec6/CleanShot%202024-10-17%20at%2014.08.33.png"
+          />
+        </li>
+        <li>Take action on any automated comments.</li>
+        <li>
+          Trigger the
+          <a href="https://app.clickup-stg.com/t/8x8uuy70n">
+            Troubleshooting::Slow Speeds::Performance questions
+          </a>
+          macro and update it based on your conversation.
+        </li>
+        <li>
+          Set the <strong>Issue Type</strong> field to the feature most closely
+          aligned with your user's <em>primary</em> performance issue (e.g., if
+          their primary issue is that loading List views is slow, use the
+          <strong>Views &gt; List &gt; List</strong> issue type).
+          <img
+            src="https://t333.s.clickup-attachments-stg.com/t333/ca2370e6-6c81-45b3-95fd-d89daec16a10/image.png"
+          />
+        </li>
+        <li>
+          <p>
+            Set the <strong>Resolution</strong> field to
+            <strong>Bug &gt; New &gt; Performance</strong>.
+          </p>
+          <ol>
+            <li>
+              Set the <strong>Defect ID</strong> field to
+              <strong>n/a</strong>.
+            </li>
+            <li>
+              Set the <strong>Report ID</strong> field to the perf report ID.
+              <img
+                src="https://t333.s.clickup-attachments-stg.com/t333/9ab26366-6b40-48c3-a472-b59f652185b1/image.png"
+              />
+            </li>
+          </ol>
+        </li>
+        <li>
+          Send the <strong>TS::Bug Confirm::Performance Issues</strong> macro
+          and <strong>solve</strong> the ticket. The performance report should
+          be in <strong>Pending Investigation</strong> status unless otherwise
+          requested by the
+          <a href="javascript: void;">@performance-tim</a>.
+          <img
+            src="https://t333.s.clickup-attachments-stg.com/t333/e8499615-9d8a-46a9-9ee4-e0dffc6b266f/CleanShot%202025-07-11%20at%2013.29.53.png"
+          />
+        </li>
+      </ol>
+      <h2>HUB Tasks</h2>
+      <p>
+        When your report is created, we'll automatically check for a
+        <a href="https://staging.clickup.com/333/v/li/980200070675">
+          <strong>HUB task</strong>
+        </a>
+        belonging to the user. If one can't be found, we'll ask you to search
+        manually:
+        <img
+          src="https://t333.s.clickup-attachments-stg.com/t333/2c64584b-991d-40a8-90b0-99f93001cfd2/image.png"
+        />
+      </p>
+      <p>
+        <strong><em>If you find a HUB task or notice one was applied:</em></strong>
+      </p>
+      <ol>
+        <li>
+          Link it to the defect with a standard
+          <a
+            href="https://help.clickup.com/hc/en-us/articles/6309896464407-Link-tasks#01HCWHT009D77Y55R6XY20GRER"
+          >
+            task link
+          </a>.
+        </li>
+        <li>
+          Stay extra alert of the report and reporter.
+          <strong>
+            If they are showing frustration or going unresponsive, please
+            directly tag the AE of the account in both the Investigation Report
+            and
+          </strong>
+          HUB task, outlining the current status of the investigation.
+        </li>
+        <li>
+          If a Defect is eventually created, please link it to the HUB task and
+          leave a comment in the preexisting thread.
+        </li>
+      </ol>
+      <h2>FAQs</h2>
+      <ul>
+        <li>
+          <p>
+            <strong>
+              What do I do if I don't have all the required details for the
+              Form submission?
+            </strong>
+          </p>
+          <ul>
+            <li>
+              If you need to submit an incomplete Form due to an escalation or
+              other extenuating circumstance, feel free to use placeholder text
+              in the required fields.
+              <em>Just be sure to supply the details later,</em> as Eng relies
+              on the information we provide!
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p>
+            <strong>
+              What do we do when users report multiple performance issues but
+              didn't share Clips of all the issues?
+            </strong>
+          </p>
+          <ul>
+            <li>
+              If the Clips the user <em>did</em> provide show clear performance
+              issues (regardless of the feature area),
+              <strong>create the report</strong>.
+            </li>
+            <li>
+              <p>Otherwise, continue t-shooting with the user until:</p>
+              <ol>
+                <li>They share clear evidence of a performance issue; or</li>
+                <li>You bug them up for a functional issue/bug.</li>
+              </ol>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
